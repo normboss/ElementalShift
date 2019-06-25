@@ -1,0 +1,101 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+
+
+/* 
+    Created on : Mar 23, 2019, 12:26:51 AM
+    Author     : Norm
+*/
+
+@import "common";
+body {
+    width: 100%; //70%;
+    margin: 0 auto;
+}
+
+main {
+    .top-section {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        column-gap: 10px;
+        @extend %green-background;
+        .box {
+            // border: 3px solid red;
+            /*width: 400px;*/
+            height: auto;
+        }
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "header3 image" "paragraph1 image" "header2 image" "paragraph2 image";
+        row-gap: 25px;
+        .header3 {
+            grid-area: header3;
+            /*border: 3px red solid;*/
+            font-family: 'Acumin Pro';
+            font-size: 36px;
+            color: #703015;
+            align-self: start;
+        }
+        .paragraph1 {
+            /*width: 1-0%;*/
+            justify-self: left;
+            grid-area: paragraph1;
+            /*border: 3px red solid;*/
+            @extend %font-paragraph1;
+        }
+        .image {
+            grid-area: image;
+            // border: 3px solid red;
+            align-self: center;
+        }
+        .header2 {
+            grid-area: header2;
+            // border: 3px red solid;
+            font-family: 'Acumin Pro';
+            font-size: 36px;
+            color: #703015;
+            align-self: start;
+        }
+        .paragraph2 {
+            /*width: 80%;*/
+            justify-self: center;
+            grid-area: paragraph2;
+            /*border: 2px solid black;*/
+            @extend %font-paragraph1;
+        }
+    }
+    .bottom-section {
+        /*border: 3px red solid;*/
+        width: 70%;
+        margin: 0 auto;
+        // display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        .header2 {
+            // border: 3px red solid;
+            text-align: center;
+            font-family: 'Acumin Pro';
+            font-size: 36px;
+            color: #703015;
+            /*align-self: start;*/
+        }
+
+        .paragraph2 {
+            width: 80%;
+            justify-self: center;
+            /*border: 2px solid black;*/
+            @extend %font-paragraph1;
+        }
+    }
+
+    .appointment-block {
+        width: 50%;
+        margin: 0 auto;
+        @extend %green-background;
+    }
+}

@@ -1,0 +1,285 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 23, 2019, 12:26:51 AM
+    Author     : Norm
+*/
+
+@import "common";
+
+
+main {
+    text-align: center;
+
+    .top-section {
+        /*border: 2px black solid;*/
+        /*background-image: url("../images/celadon_2.png");*/
+        background-image: linear-gradient(to right, #ffffff, $celadon, $celadon, $celadon, #ffffff);        
+        background-size: cover;
+        width: 70%;
+        margin: 0 auto;
+        /*height: 500px;*/
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /*grid-template-rows: 1fr 2fr;*/
+        padding: 25px;
+        /*        grid-template-areas: "header3 image" ,
+                                                "paragraph1 image";*/
+        justify--items: center;
+        @include max-mixin(850px) {
+            grid-template-columns: 1fr;
+            /*grid-template-rows: 1fr 1fr 1fr;*/
+            @include max-mixin(500px) {
+                /*grid-template-rows: 1fr;*/
+                /*grid-template-rows: 1fr 1fr 1fr;*/
+            }
+            /*            grid-template-areas: "header3" 
+                                                        "image" 
+                                                        "paragraph1";*/
+        }
+        /*grid-auto-rows: minmax(100px, auto);*/
+        /*justify-items: center;*/
+
+        .box {
+            border: 3px solid red;
+        }
+
+        .header3 {
+            /*padding-top: 100px;*/
+            /*border: 3px red solid;*/
+            font-family: 'Acumin Pro';
+            font-size: 36px;
+            color: #703015;
+            /*            grid-column: 1;
+                        grid-row: 1;*/
+            /*            justify-items: center;
+                        align-self: start;*/
+            grid-row: 1 / span 1;
+            grid-column: 1 / span 1;
+            align-self: start;
+            @include max-mixin(800px) {
+                font-size: 28px;
+            }
+            @include max-mixin(450px) {
+                font-size: 22px;
+            }
+        }
+        .paragraph1 {
+            /*border: 3px red solid;*/
+            @extend %font-paragraph1;
+            /*width: 60%;*/
+            /*            grid-column: 1;
+                        grid-row: 2;*/
+            /*align-self: center;*/
+            /*grid-row: 2 / span 1;*/
+            grid-column: 1 / span 1;
+            align-self: start;
+            text-align: left;
+            /*padding-top: 50px;*/
+            @include max-mixin(850px) {
+                grid-row: 3 / span 1;
+                padding-top: 0;
+            }
+            @include max-mixin(1000px) {
+                font-size: 24px;
+                padding-top: 0;
+            }
+        }
+
+        .image {
+            /*border: 3px solid red;*/
+            /*padding-top: 15px;*/
+
+            /*width: 100%;*/
+            height: auto;
+            /*height: 400px;*/
+            max-width: 259px;
+            min-width: 259px;
+            background-size: cover;
+            background-repeat:  no-repeat;
+            background-position: top;
+            /*            grid-column: 2;
+                        grid-row: 1/4;*/
+            /*align-self: center;*/
+            /*padding-right: 150px;*/
+            grid-row: 1 / span 2;
+            grid-column: 2 / span 1;
+            img {
+                align-self: center;
+            }
+            @include max-mixin(850px) {
+                grid-row: 2 / span 1;
+                grid-column: 1 / span 1;
+            }
+            /*            $x: 15%;
+                        $y: 5%;*/
+
+            clip-path: polygon(
+                0 10%,
+                10% 0, 
+                90% 0, 
+                100% 10%, 
+                100% 95%,
+                95% 100%, 
+                5% 100%, 
+                0 95%
+                );
+/*            clip-path: polygon(
+                15% 15%,
+                25% 5%, 
+                85% 5%, 
+                95% 15%, 
+
+                95% 70%,
+                85% 80%, 
+                25% 80%, 
+                15% 70%
+                );*/
+
+            /*                clip-path: square(40% 40%);*/
+            @include max-mixin(500px) {
+                /*clip-path: polygon(15% 5%, 95% 5%, 95% 80%, 15% 80%);*/
+                min-width: 250px;
+            }
+            /*            clip-path: polygon(
+                            );*/
+        }
+        @include max-mixin(500px) {
+            width: 90%;
+            /*align-self: left;*/
+        }
+
+    }
+
+    .middle-section {
+        width: 70%;
+        margin: 0 auto;
+        text-align: left;
+
+        .header2 {
+            @extend %font-header2;
+            font-size: 48px;
+            @include max-mixin(400px) {
+                font-size: 36px;
+            }
+            text-align: center;
+        }
+        .paragraph2 {
+            @extend %font-paragraph2;
+            /*align-text: left;*/
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 20px;
+            /*padding-left: 75px;*/
+
+
+            span {
+                align-self: flex-end;
+                /*line-height: 10px;*/
+            }
+        }
+        @include max-mixin(500px) {
+            width: 90%;
+            /*align-self: left;*/
+        }
+
+    }
+
+    .bottom-section {
+        /*border: 2px solid red;*/
+        width: 70%;
+        @include max-mixin(400px) {
+            width: 90%;
+        }
+        margin: 0 auto;
+        text-align: left;
+
+        /*        display: grid;
+                grid-template-columns: 1fr;
+                justify-items: center;*/
+
+        /*        margin: 0 auto;
+                align-text: left;
+                display: flex;
+                flex-direction: column;*/
+
+        .header2 {
+            @extend %font-header2;
+            font-size: 48px;
+            margin: 0 auto;
+            align-text: center;
+            @include max-mixin(400px) {
+                font-size: 36px;
+            }
+            text-align: center;
+        }
+
+        .paragraph2 {
+            /*border: 2px solid black;*/
+            /*justify-items: left;*/
+            /*align-self: left;*/
+            @extend %font-paragraph2;
+            /*align-text: left;*/
+            font-size: 20px;
+            @include max-mixin(400px) {
+                font-size: 16px;
+            }
+        }
+        @include max-mixin(500px) {
+            width: 90%;
+            /*align-self: left;*/
+        }
+
+    }
+
+    /*    .appointment {
+            background-image: url("../images/celadon_2.png");
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 250px;
+            .quote2 {
+                Quote 2 Bilbo Swash Caps 36 pt, 48 px, 300%, #83653b
+                width: 50%;
+                text-align: center;
+                margin: 0 auto;
+                @extend %font-quote2;
+                line-height: 80%;
+            }
+        }*/
+
+    /*    .issues {
+            width: 80%;
+    
+            @include max-mixin(650px) {
+                width: 100%;
+            }
+            border: 1px solid brown;
+            border-radius: 20px;
+            border-bottom-style: none;
+            background-color: lightgreen;
+            clip-path: polygon(0% 9%, 2% 0%, 98% 0%, 100% 9%, 100% 91%, 98% 100%, 2% 100%, 0% 91%, 0% 9%);
+            clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%);
+            margin: 0 auto;
+            height: 280px;
+            height: auto;
+    
+            .header {
+                @extend %font-h7;
+            }
+    
+            .stuff {
+                display: flex;
+                justify-content: space-around;
+                ul li {
+                    text-align: left;
+                    @extend %font-p4;
+                }
+            }
+        }*/
+}

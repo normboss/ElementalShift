@@ -1,0 +1,471 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 26, 2019, 10:55:14 PM
+    Author     : Norm
+*/
+@import "common";
+
+
+body {
+    width: 100%; //70%;
+    margin: 0 auto;
+}
+
+header {
+    .banner {
+        /*border: 2px solid red;*/
+        /*@extend %font-h1;*/
+        /*font-size: 64px;*/
+        display: flex;
+        justify-content: space-around;
+        /*height: 100px;*/
+        @include max-mixin(650px) {
+            flex-direction: column;
+            text-align: center;
+            font-size: 80;
+        }    
+
+        .elemental-shift {
+            /*border: 2px solid red;*/
+            @extend %font-h1;
+
+            /*            @include max-mixin(600px) {
+                            font-size: 16px;
+                            color: red;
+                        }*/
+        }
+
+    }
+
+
+    #full-menu {
+        /*         @include max-mixin(650px) {
+                     display: none;
+                 }    */
+        @include min-mixin(650px) {
+            display: block;
+        }    
+        @include max-mixin(650px) {
+            width: 100%;
+            margin-top: 0px;
+        }    
+
+    }
+    #short-menu {
+        @include min-mixin(650px) {
+            display: none;
+        }    
+        /*         @include max-mixin(650px) {
+                     display: block;
+                 }    */
+        display: none;
+    }
+
+
+    #full-menu {
+
+        .menu-box .menu-item .menu-icon {
+            /*border: 2px solid red;*/
+            /*            padding-top: 30px;
+                        align-self: center;
+                        padding-right: 25px;*/
+        }
+        display: flex;
+        justify-content: space-around;
+        background-color: $celadon;
+        /*background-color: #333;*/
+        font-family: 'Acumen Pro Wide', Arial, Helvetica, sans-serif;
+        width: 50%;
+        height: 50px;
+        margin-top: 40px;
+        /*border-radius: 20px;*/
+        clip-path: polygon(0% 20%, 1.5% 0%, 98.5% 0%, 100% 20%, 100% 80%, 98.5% 100%, 1.5% 100%, 0% 80%, 0% 20%);
+
+        .menu {
+            /*            border: 3px solid blue;*/
+            color: black;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: $celadon;
+                /*min-width: 100px;*/
+                height: auto;
+                /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+                /*z-index: 1;*/
+            }
+
+            .dropdown-content a {
+                float: none;
+                color: black;
+                /*padding: 12px;*/
+                text-decoration: none;
+                display: block;
+                text-align: left;
+                height: auto;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            .menu-item {
+                font-size: 1.25rem /*20px*/;
+                color: black;
+            }
+        }
+
+        a {
+            float: left;
+            /*font-size: 1.25rem;*/
+            color: black;
+            text-align: center;
+            /*padding: 14px;*/
+            text-decoration: none;
+            position: relative;
+            top: 15px;
+        }
+
+        a:hover, .dropdown:hover .dropbtn {
+            /*background-color: red; //#5243D8;*/
+            text-decoration: underline;
+        }
+
+        .dropdown-item {
+            font-size: 1.25rem;
+            color: black;
+        }
+    }
+
+    #new-menu {
+/*        display: flex;
+        justify-content: space-around;*/
+        /*background-color: #333;*/
+        font-family: 'Acumen Pro Wide', Arial, Helvetica, sans-serif;
+        width: 50%;
+        height: 50px;
+        margin-top: 40px;
+        /*border-radius: 20px;*/
+        /*clip-path: polygon(0% 20%, 1.5% 0%, 98.5% 0%, 100% 20%, 100% 80%, 98.5% 100%, 1.5% 100%, 0% 80%, 0% 20%);*/
+        color: black;
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            background-color: $celadon;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a, .dropbtn {
+            display: inline-block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover, .dropdown:hover .dropbtn {
+            background-color: red;
+        }
+
+        li.dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 5;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }    
+
+    }
+}
+
+main {
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a, .dropbtn {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover, .dropdown:hover .dropbtn {
+        background-color: red;
+    }
+
+    li.dropdown {
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .dropdown-content a:hover {background-color: #f1f1f1}
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }    
+
+
+    /*        .menu-box .menu-item .menu-icon {
+                border: 2px solid red;
+                padding-top: 30px;
+                align-self: center;
+                padding-right: 25px;
+            }*/
+
+    text-align: center;
+
+    .content {
+        /*border: 3px red solid;*/
+        /*background-color: #E0F1ED;*/
+        /*background-color: rgba(224, 241, 237, 0.5);*/
+        /*border-radius: 100px;*/
+        /*height: 650px;*/
+        height: auto;
+        width: auto;
+        img {
+            width: 100%;
+        }
+        /*    @include max-mixin(1000px) {
+              height: 1000px;
+            }*/
+
+        .holistic {
+            /*border: 3px solid red;*/
+            height: auto;
+            height: 200px;
+            @include max-mixin(900px) {
+                height: 200px;
+            }
+            @include max-mixin(700px) {
+                height: 150px;
+            }
+
+            img {
+                @include max-mixin(900px) {
+                    width: 70%;
+                }
+            }
+        }
+
+        .h2 {
+            /*height: 180px;*/
+        }
+
+        .h3 {
+            @extend %font-h3;
+            /*      border: 3px solid red;*/
+        }
+
+        .h4 {
+            @extend %font-h4;
+
+        }
+
+        .p1 {
+            @extend %font-p1;
+            /*border: 3px solid red;*/
+            /*height: 30px;*/
+            width: 15%;
+            margin: 0 auto;
+            color: $brown;
+            font-weight: bold;
+        }
+
+        .p2 {
+            @extend %font-p2;
+        }
+
+        .p3 {
+            @extend %font-p3;
+        }
+    }
+
+    .kirsten {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+
+        .p2 {
+            width: 50%;
+            @extend %font-p2;
+            align-self: center;
+        }
+
+        .quote3 {
+            /*border: 3px solid red;*/
+            @extend %font-quote3;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+
+    .lower-content {
+        margin: 0 auto;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+
+        .kirsten-image {
+            width: 179px;
+            height: 200px;
+        }
+
+        .column {
+            /*border: 3px solid red;*/
+        }
+        .paragraph3, .paragraph9 {
+            padding-left: 25px;
+            padding-top: 5px;
+            text-align: left;
+        }
+        .paragraph3 {
+            /*Paragraph 3     Acumen Pro Wide Light 24 pt, 36 px # Holistic Red #703015*/
+            @extend %font-paragraph3;
+        }
+        .paragraph9 {
+            padding-right: 10px;
+            /*Paragraph 9 	Acumen Pro Regular 24 pt, 36 px. # 83653b*/
+            @extend %font-paragraph9;
+            .kirsten-signature {
+                text-align: right;
+            }
+        }
+
+        .p3 {
+            /*text-align: center;*/
+            width: 80%;
+            @extend %font-p3;
+            align-self: center;
+        }
+
+        .h5 {
+            @extend %font-h5;
+        }
+        .h6 {
+            @extend %font-h6;
+        }
+    }
+
+    .issues {
+        width: 80%;
+        @include max-mixin(650px) {
+            width: 100%;
+        }
+        border: 1px solid brown;
+        border-radius: 20px;
+        /*border-bottom-style: none;*/
+        /*background-color: lightgreen;*/
+        /*clip-path: polygon(0% 9%, 2% 0%, 98% 0%, 100% 9%, 100% 91%, 98% 100%, 2% 100%, 0% 91%, 0% 9%);*/
+        /*clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%);*/
+        margin: 0 auto;
+        height: 280px;
+        height: auto;
+
+        .header {
+            @extend %font-h7;
+        }
+
+        .stuff {
+            display: flex;
+            justify-content: space-around;
+            ul li {
+                text-align: left;
+                @extend %font-p4;
+            }
+        }
+    }
+
+    .quote2 {
+        /*Quote 2 Bilbo Swash Caps 36 pt, 48 px, 300%, #83653b*/
+        width: 50%;
+        text-align: center;
+        margin: 0 auto;
+        @extend %font-quote2;
+        line-height: 80%;
+    }
+}
+
+
+
+
+footer {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    @include max-mixin(900px) {
+        flex-direction: column;
+        align-items: center;
+    }
+    .left {
+        /*border: 2px solid red;*/
+        @extend %font-h8;
+        height: 80px;
+    }
+
+    .right {
+        @extend %font-p5;
+    }
+}
+

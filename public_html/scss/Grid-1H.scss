@@ -1,0 +1,79 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 19, 2019, 10:51:20 PM
+    Author     : Norm
+*/
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; 
+}
+
+img {
+    width: 100%; 
+}
+
+
+.set1-part2, grid-1H {
+    background: #ccc;
+    font-family: Helvetica; 
+
+    main {
+        width: 80%;
+        margin: 2em auto;
+        background: white;
+        -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4); 
+        
+        display: grid;
+        grid-template-columns: repeat(5, 1fr 2fr);
+        grid-gap: 1em 0.5em; 
+
+        div {
+            background: #F8F5EA;
+            color: #333;
+            text-align: center;
+            padding: 2em 0;
+            border: 1px solid #E9DFBA; 
+        }
+
+        div:nth-child(4) {
+            grid-column: 6 / 9; 
+        }
+
+        div:nth-child(7) {
+            grid-column: 3 / 4; 
+            grid-row: 2 / 5;
+        }
+
+        div:nth-child(8) {
+            grid-column: 4 / 7; 
+            grid-row: 2 / 5;
+        }
+
+        div:nth-child(14) {
+            grid-column: 6 / 7; 
+        }
+
+        div:nth-child(25) {
+            grid-column: 6 / 9; 
+        }
+
+        div:nth-child(26) {
+            grid-column: 6 / 9; 
+        }
+
+        div:nth-child(27) {
+            grid-column: 6 / 9; 
+        }
+
+    }
+
+}
+
+
+

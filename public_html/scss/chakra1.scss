@@ -1,0 +1,175 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 23, 2019, 12:33:28 AM
+    Author     : Norm
+*/
+
+@import "common";
+
+.header-image {
+    border: 3px solid red;
+    .chakra-page {
+        height: 514px;
+        height: 80vh;
+        background-image: url("../images/sky_image.png");
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: auto;
+        font-size: 48px;
+        @media screen and (max-height: 550px ) {
+            font-size: 36px;
+        }
+        @media screen and (max-height: 450px ) {
+            font-size: 28px;
+        }
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @media screen and (max-height: 550px ) {
+            justify-items: top;
+        }
+        color: white; //#83653b;
+        font-weight: bold;
+    }
+    
+/*    height: 570px;
+    #chakra-image1 { display: block; }
+    #chakra-image2 { display: none; }
+    #chakra-image3 { display: none; }
+    #chakra-image4 { display: none; }
+    #chakra-image5 { display: none; }
+    #chakra-image6 { display: none; }
+    
+    @include max-mixin(1400px) {
+        background-image: url("../images/sky_image2.png");
+    }
+    @include max-mixin(1000px) {
+        background-image: url("../images/sky_image3.png");
+        height: 569px;
+    }
+    @include max-mixin(750px) {
+        background-image: url("../images/sky_image4a.png");
+        height: 448px;
+    }
+    @include max-mixin(500px) {
+        background-image: url("../images/sky_image5.png");
+        height: 504px;
+    }
+    @include max-mixin(400px) {
+        background-image: url("../images/sky_image6.png");
+        height: 368px;
+    }*/
+}
+
+main {
+
+    .upper-section {
+        border-radius: 40px;
+        padding-bottom: 20px;
+        background-color:  $celadon;
+        display: grid;
+        justify-items: center;
+        text-align: left;
+        margin: 0 auto;
+        width: 80%;
+        .header-image {
+            height: 570px;
+            background-image: url("../images/sky_image1.png");
+            background-repeat: no-repeat;
+            background-size: auto;
+            @include max-mixin(1400px) {
+                background-image: url("../images/sky_image2.png");
+                background-repeat: no-repeat;
+                background-size: auto;
+            }
+            @include max-mixin(1000px) {
+                background-image: url("../images/sky_image3.png");
+                background-repeat: no-repeat;
+                background-size: auto;
+                height: 569px;
+            }
+            @include max-mixin(750px) {
+                background-image: url("../images/sky_image4a.png");
+                background-repeat: no-repeat;
+                background-size: auto;
+                height: 448px;
+            }
+            @include max-mixin(500px) {
+                background-image: url("../images/sky_image5.png");
+                background-repeat: no-repeat;
+                background-size: auto;
+                height: 504px;
+            }
+            @include max-mixin(400px) {
+                background-image: url("../images/sky_image6.png");
+                background-repeat: no-repeat;
+                background-size: auto;
+                height: 368px;
+            }
+        }
+
+        .chakras-header {
+            @extend %font-paragraph2;
+            font-size: 36px;
+            color: #703015;
+            text-align: center;
+        }
+
+        .chakras-paragraph {
+            width: 90%;
+
+            .chakras-word {
+                @extend %font-paragraph4;
+                font-size: 37px;
+            }
+            @extend %font-paragraph2;
+            font-size: 20px;
+        }
+    }
+
+    .lower-section {
+        /*border: 2px solid red;*/
+        @extend %font-paragraph2;
+        font-size: 22px;
+        text-align: center;
+        margin: 0 auto;
+        width: 80%;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        @include max-mixin(700px) {
+            grid-template-columns: 1fr;
+        }
+        grid-column-gap: 25px;
+        justify-items: center;
+
+        .mandala-image {
+            /*border: 2px solid red;*/
+        }
+
+        .copy {
+            /*border: 2px solid red;*/
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: left;
+            @include max-mixin(700px) {
+                padding-left: 20px;
+                width: 70%;
+                text-align: left;
+            }
+            
+            .root-chakra { color: #ff0000;font-weight: bold; }
+            .womb-chakra {color: #fb8703;font-weight: bold; }
+            .solar-plexus-chakra {color: #957a2b;font-weight: bold; }
+            .heart-chakra {color: green;font-weight: bold; }
+            .throat-chakra {color: #3a00c9; font-weight: bold;}
+            .third-eye-chakra {color: #0000ff;font-weight: bold; }
+            .crown-chakra {color: #ad00ff;font-weight: bold; }
+
+        }
+    }
+}

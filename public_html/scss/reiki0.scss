@@ -1,0 +1,291 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+
+
+/* 
+    Created on : Mar 23, 2019, 9:10:44 AM
+    Author     : Norm
+*/
+
+@import "common";
+.heading {
+    font-size: 36px;
+    text-align: center;
+    .page-title-red {
+        font-family: Arial;
+        color: #703015;
+        font-weight: bold;
+    }
+    .page-title-light {
+        font-family: Arial;
+        color: #703015;
+        font-weight: normal;
+    }
+    @include max-mixin(450px) {
+        font-size: 28px;
+    }
+}
+
+main {
+    /*border: 3px solid black;*/
+    @include min-mixin(500px) {
+        margin: 0 auto;
+    }
+    width: 70%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 10px;
+    /*    grid-template-areas:
+            "block1 block2"
+            "block3 block2"
+            "block5 block10"
+            "block7 block10"
+            "blcok11 block14"
+            "block15 block14"
+            ;*/
+    row-gap: 25px;
+    column-gap: 25px;
+
+    .show-numbers {
+        display: inline;
+    }
+    .block {
+        border: 3px solid red;
+        height: auto;
+        /*width: 50%;*/
+        /*background-color: pink;*/
+        @extend %font-paragraph2;
+        font-size: 20px;
+        /*padding: 25px;*/
+        @include max-mixin(450px) {
+            /*padding: 25px 10px 25px 5px;*/
+        }
+    }
+    ul.paragraph {
+        list-style-type: none;
+    }
+
+    /*********************** column 1 *********************/
+    .column1 {
+
+        $row-num: 1;
+        .block1 {
+            /*border: 3px solid red;*/
+            /*grid-area: block1;*/
+            grid-row: 1 / span 1;
+            grid-column: 1 / span 1;
+            @extend %font-paragraph2;
+            font-size: 20px;
+            /*width: 80%;*/
+
+            align-self: start;
+            /*height: auto;*/
+
+        }
+
+        .block3 {
+            /*grid-area: block3;*/
+            align-self: start;
+            grid-row: 2 / span 1;
+            grid-column: 1 / span 1;
+            .heading {
+                @extend %font-header2;
+                font-size: 30px;
+            }
+            @include max-mixin(900px) {
+                /*            grid-row: 3 / span 1;
+                            grid-column: 1 / span 2;*/
+            }
+        }
+
+        .block5 {
+            /*grid-area: block5;*/
+            grid-row: 3 / span 1;
+            grid-column: 1 / span 1;
+            align-content: bottom;
+            height: 50px;
+            .heading {
+                @extend %font-header2;
+                font-size: 30px;
+            }
+            padding-bottom: 20px;
+        }
+
+        .block7 {
+            /*grid-area: block5;*/
+            grid-row: 5 / span 2;
+            grid-column: 1 / span 1;
+            .heading {
+                @extend %font-header2;
+                font-size: 30px;
+            }
+        }
+
+        .block9 {
+            /*grid-area: block5;*/
+            grid-row: 6 / span 1;
+            grid-column: 1 / span 1;
+            .heading {
+                @extend %font-header2;
+                font-size: 30px;
+            }
+        }
+
+        .block11 {
+            /*grid-area: block5;*/
+            grid-row: 7 / span 1;
+            grid-column: 1 / span 1;
+            .heading {
+                @extend %font-header2;
+                font-size: 30px;
+            }
+            @include max-mixin(850px) {
+                /*grid-column: 2 / span 1;*/
+                display: none;
+            }
+        }
+
+        .block13 {
+            /*grid-area: block5;*/
+            grid-row: 8 / span 1;
+            grid-column: 1 / span 1;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            @include max-mixin(850px) {
+                grid-column: 2 / span 1;
+            }
+        }
+
+        .block15 {
+            /*border: 3px solid red;*/
+            color: red;
+            /*grid-area: block5;*/
+            height: 200px;
+            grid-row: 9 / span 1;
+            grid-column: 1 / span 2;
+            width: 100%;
+            @include max-mixin(1200px) {
+                grid-column: 1 / span 2;
+                justify-self: center;
+                display: none;
+            }
+            @include max-mixin(850px) {
+                grid-column: 1 / span 1;
+            }
+            @extend %green-background;
+        }
+    }       /************ end of column1 **********/
+
+
+    .column2 {
+        $row-num: 1;
+        .block2 {
+            /*border: 3px solid red;*/
+            /*grid-area: block2;*/
+            align-content: start;
+            img {
+                width: 100%;
+                /*border: 3px solid blue;*/
+                /*align-self: bottom;*/
+            }
+            /*padding-right: 200px;*/
+            /*        background-image: url("../images/reiki_symbol1.jpg");
+                    font-size: cover;
+                    background-repeat: no-repeat;
+                    background-size: auto;*/
+            grid-row: 1 / span 5;
+            grid-column: 2 / span 1;
+            @include max-mixin(850px) {
+                /*max-height: 8vh;*/
+            }
+        }
+        .block10 {
+            /*grid-area: block5;*/
+            grid-row: 5 / span 1;
+            grid-column: 2 / span 1;
+            .heading {
+                @extend %font-header2;
+                font-size: 30px;
+            }
+            padding-bottom: 10px;
+        }
+
+        .block12 {
+            /*grid-area: block5;*/
+            grid-row: 6 / span 1;
+            grid-column: 2 / span 1;
+            .heading {
+                @extend %font-header2;
+                font-size: 30px;
+            }
+            padding-bottom: 25px;
+        }
+        .block14 {
+            /*grid-area: block5;*/
+            grid-row: 7 / span 1;
+            grid-column: 2 / span 1;
+            .heading {
+                @extend %font-header2;
+                font-size: 30px;
+            }
+            padding-bottom: 25px;
+        }
+
+        .block11, .block13 {
+            padding-bottom: 25px;
+            grid-row: 8 / span 1;
+            grid-column: 2 / span 1;
+            .heading {
+                @extend %font-header2;
+                font-size: 30px;
+            }
+            display: none;
+            @include max-mixin(850px) {
+                display: grid;
+            }
+        }
+
+        .block16 {
+            /*grid-area: block5;*/
+            grid-row: 8 / span 1;
+            grid-column: 2 / span 1;
+            .heading {
+                @extend %font-header2;
+                font-size: 30px;
+            }
+        } /*************** end of column2 ****************/
+    }
+    .appointment-block {
+        /*border: 3px solid red;*/
+        /*height: 200px;*/
+        /*width: 100%;*/
+        grid-column: 1 / span 2;
+        justify-content: center;
+        @extend %green-background;
+        display: none;
+        @include max-mixin(1200px) {
+            display: grid;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+}
+
+
+.quote2 {
+    /*Quote 2 Bilbo Swash Caps 36 pt, 48 px, 300%, #83653b*/
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    @extend %font-quote2;
+    line-height: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 28px;
+    line-height: 1.1;
+    word-spacing: 1;
+}

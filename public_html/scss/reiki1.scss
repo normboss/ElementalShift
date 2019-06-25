@@ -1,0 +1,141 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 23, 2019, 9:10:44 AM
+    Author     : Norm
+*/
+
+@import "common";
+@import "appointment";
+.heading {
+    font-size: 48px;
+    text-align: center;
+
+    .page-title-red {
+        font-family: Arial;
+        color: #703015;
+        font-weight: bold;
+    }
+    .page-title-light {
+        font-family: Arial;
+        color: #703015;
+        font-weight: normal;
+    }
+}
+
+main {
+    /*border: 3px solid black;*/
+        img { 
+        float: right;
+    }
+    
+    @include min-mixin(500px) {
+        margin: 0 auto;
+    }
+    width: 80%;
+    height: auto;
+    /*display: grid;*/
+    grid-template-columns: 1fr 1fr;
+    /*grid-template-rows: auto auto auto auto auto;*/
+    grid-template-areas: 
+        "block1 block2"
+        "block3 block2"
+        "block4 block5";
+    @include max-mixin(1000px) {
+        grid-template-areas: 
+            "block1 block2"
+            "block3 block3"
+            "block4 block5";
+    }
+    @include max-mixin(850px) {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "block2"
+            "block1" 
+            "block3" 
+            "block5"
+            "block4";
+    }
+                                    
+    row-gap: 40px;
+    column-gap: 40px;
+
+    .block {
+        /*border: 3px solid red;*/
+        height: auto;
+        /*width: 50%;*/
+        /*background-color: pink;*/
+        @extend %font-paragraph2;
+        font-size: 20px;
+        padding: 25px;
+        @include max-mixin(450px) {
+            padding: 25px 10px 25px 5px;
+        }
+    }
+    .block1 {
+        grid-area: block1;
+/*        grid-row: 1 / span 1;
+        grid-column: 1 / span 1;*/
+        @extend %font-paragraph2;
+        font-size: 20px;
+    }
+    .block2 {
+        border: 3px solid red;
+        grid-area: block2;
+        img {
+            float: right;
+        }
+/*        grid-row: 1 / span 2;
+        grid-column: 2 / span 1;*/
+    }
+    .block3 {
+        grid-area: block3;
+/*        grid-row: 2 / span 1;
+        grid-column: 1 / span 1;*/
+        .heading {
+            @extend %font-header2;
+            font-size: 30px;
+        }
+        background-color: $celadon;
+        border-radius: 35px;
+        @include max-mixin(900px) {
+/*            grid-row: 3 / span 1;
+            grid-column: 1 / span 2;*/
+        }
+    }
+    .block4 {
+        grid-area: block4;
+/*        grid-row: 3 / span 1;
+        grid-column: 1 / span 1;*/
+        .heading {
+            @extend %font-header2;
+            font-size: 30px;
+        }
+        ul {
+            list-style: none;
+        }
+    }
+    .block5 {
+        grid-area: block5;
+/*        grid-row: 3 / span 1;
+        grid-column: 2 / span 1;*/
+        background-color: $celadon;
+        border-radius: 35px;
+        
+    }
+
+}
+ .quote2 {
+            /*Quote 2 Bilbo Swash Caps 36 pt, 48 px, 300%, #83653b*/
+            width: 50%;
+            text-align: center;
+            margin: 0 auto;
+            @extend %font-quote2;
+            line-height: 80%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 32px;
+        }
