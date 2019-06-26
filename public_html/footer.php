@@ -35,7 +35,7 @@ and open the template in the editor.
             
             <div class="lower-part">
                 <div>
-                    <span class="credit-brand footer-box">ALCHEMY</span><span class="credit-name"> Web Designs.com</span>;
+                    <span class="credit-brand footer-box">Alchemy</span><span class="credit-name"> Web Designs.com</span>;
                 </div>
 
                 <div class="credit-tagline footer-box">
